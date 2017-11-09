@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        @keyframes rotate {
+            0% {
+                transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+            }
+            100% {
+                transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+            }
+        }
+        .stars {
+            transform: perspective(500px);
+            transform-style: preserve-3d;
+            position: absolute;
+            bottom: 0;
+            perspective-origin: 50% 100%;
+            left: 50%;
+            animation: rotate 90s infinite linear;
+        }
+
+        .star {
+            width: 2px;
+            height: 2px;
+            background: #F7F7B6;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 0 0 -300px;
+            transform: translate3d(0, 0, -300px);
+            backface-visibility: hidden;
+        }
+        .san{
+            background: radial-gradient(200% 100% at bottom center, #0070aa, #0b2570, #000035, #000);
+            background: radial-gradient(220% 105% at top center, #000 10%, #000035 40%, #0b2570 65%, #0070aa);
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+<div id="dowebok">
+    <div class="section yi">
+        <div class="zhezhao"></div>
+        <img src="img/bg.jpg" alt="">
+        <div class="wenzi-1">
+                <ul>
+                    <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp个人简介</li>
+                    <li>&nbsp&nbsp&nbsp&nbsp&nbsp年龄 : 22岁</li>
+                    <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp姓名：王晨</li>
+                    <li>&nbsp&nbspTEL：18834418175</li>
+                </ul>
+            <ul>
+                <li>&nbsp&nbsp&nbsp&nbsp职业技能简述</li>
+                <li>HTML,CSS</li>
+                <li>&nbsp&nbsp&nbsp&nbsp&nbspJAVASCRIPT</li>
+                <li>JAVASCRIPT</li>
+                <li>&nbsp&nbsp&nbspJAVASCRIPT</li>
+                <li>&nbsp&nbspJAVASCRIPT</li>
+            </ul>
+            <ul>
+                <li>你好，我是一名前端工程师</li>
+                <li>点击我的头像查看更多</li>
+            </ul>
+        </div>
+        <div class="zp"><img class="zp-1" src="img/zp.jpg" alt=""></div>
+    </div>
+    <div class="section er">
+        <div class="slide">
+            <div class="wuziqi-biaoti">
+                <ul>
+                    <li>五</li>
+                    <li>子</li>
+                    <li>棋</li>
+                    <li>游</li>
+                    <li>戏</li>
+                </ul>
+
+            </div>
+            <div class="wuziqi-tp"><div class="wuziqi-1"><img src="img/t1.jpg" alt=""></div></div>
+            <a class="ksyx" href="projects/五子棋/wuziqiyouxi.html">进入游戏</a>
+            <img src="img/mmm.jpg" alt="">
+        </div>
+        <div class="slide a009">
+            <img src="img/55ffc7529f1920c62ce345cad7e2c6bd.jpg" alt="" >
+            <div class="zimu1"><img src="img/A.png" alt=""></div>
+            <div class="zimu2"><img src="img/B.png" alt=""></div>
+            <div class="zimu3"><img src="img/C.png" alt=""></div>
+            <div class="zimu4"><img src="img/D.png" alt=""></div>
+            <div class="zimu5"><img src="img/E.png" alt=""></div>
+            <div class="zimu6"><img src="img/F.png" alt=""></div>
+            <div class="zimu7"><img src="img/G.png" alt=""></div>
+            <div class="zimu8"><img src="img/H.png" alt=""></div>
+            <div class="box90">
+            <div class="div000 div41">
+                <div class="hong"><a href="projects/打字游戏/打字游戏.html">进入游戏</a></div>
+                <div>A</div>
+                <div>B</div>
+                <div>C</div>
+                <div>D</div>
+                <div>打字游戏</div>
+            </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="bg bg-box-1"></div>
+            <div class="bg bg-box-2"></div>
+            <div class="bg bg-box-3"></div>
+            <div class="bg bg-box-4"></div>
+            <div id="wrap">
+                <ul>
+                    <li>
+                        <div class="text">
+                            <a href="projects/小米/xiaomi.html"><p>小米网站</p></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text">
+                            <a href="projects/企业/qiye.html"><p>乔一碗</p></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text">
+                            <a href="projects/天猫/tianmao.html"><p>天猫网站</p></a>
+                        </div>
+                    </li>
+                    <li class="curr">
+                        <div class="text">
+                            <a href="projects/todolist/todolist.html"><p>记事本</p></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide"><img src="img/yidongmmm.jpg" alt="">
+            <div class="yidongmmm"><a href="projects/中国移动/中国移动.html">移动网站</a></div>
+        </div>
+    </div>
+    <div class="section san">
+        <div class="stars">
+        </div>
+        <script src='js/stopExecutionOnTimeout.js'></script>
+        <div class="san-1">
+            <div class="demo">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="box">
+                                <div class="box-img">
+                                    <img src="img/timg.jpg" alt="">
+                                </div>
+                                <div class="box-content">
+                                    <h4 class="title">Javascript</h4>
+                                    <p class="description">JavaScript是一种基于对象和事件驱动，并具有安全性的脚本语言。 它与HTML,CSS结合起来，用于增强功能，并提高与最终用于之间的交互性能。</p>
+                                    <ul class="social-links">
+                                        <li><a href="#" class="fa fa-qq"></a></li>
+                                        <li><a href="#" class="fa fa-weibo"></a></li>
+                                        <li><a href="#" class="fa fa-weixin"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="box">
+                                <div class="box-img">
+                                    <img src="img/timg.jpg" alt="">
+                                </div>
+                                <div class="box-content">
+                                    <h4 class="title">Css</h4>
+                                    <p class="description">精通JavaScript原生编程，对面向对象编程有丰富经验，可进行高效模块化开发，并保证良好复用和维护性。可熟练使用MVC框架(如BackBone.js)进行复杂单页面应用开发。对编写jQuery组件有丰富经验。</p>
+                                    <ul class="social-links">
+                                        <li><a href="#" class="fa fa-qq"></a></li>
+                                        <li><a href="#" class="fa fa-weibo"></a></li>
+                                        <li><a href="#" class="fa fa-weixin"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="img/timg.jpg" alt="">
+                            </div>
+                            <div class="box-content">
+                                <h4 class="title">html5/css3</h4>
+                                <p class="description">精通JavaScript原生编程，对面向对象编程有丰富经验，可进行高效模块化开发，并保证良好复用和维护性。可熟练使用MVC框架(如BackBone.js)进行复杂单页面应用开发。对编写jQuery组件有丰富经验。</p>
+                                <ul class="social-links">
+                                    <li><a href="#" class="fa fa-qq"></a></li>
+                                    <li><a href="#" class="fa fa-weibo"></a></li>
+                                    <li><a href="#" class="fa fa-weixin"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="box">
+                                <div class="box-img">
+                                    <img src="img/timg.jpg" alt="">
+                                </div>
+                                <div class="box-content">
+                                    <h4 class="title">移动端</h4>
+                                    <p class="description">精通JavaScript原生编程，对面向对象编程有丰富经验，可进行高效模块化开发，并保证良好复用和维护性。可熟练使用MVC框架(如BackBone.js)进行复杂单页面应用开发。对编写jQuery组件有丰富经验。</p>
+                                    <ul class="social-links">
+                                        <li><a href="#" class="fa fa-qq"></a></li>
+                                        <li><a href="#" class="fa fa-weibo"></a></li>
+                                        <li><a href="#" class="fa fa-weixin"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section si">
+        <div class="si-wenzi">
+            <span>联系我&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><br>
+            <span><i class="iconfont">&#xe60a;</i> 18834418175</span><br>
+            <span><i class="iconfont">&#xe692;</i> 910321824@qq.com</span><br>
+            <span><i class="iconfont">&#xe605;</i> 910321824&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><br>
+            <span><i class="iconfont">&#xe9f3;</i> 我的博客</span><br>
+        </div>
+        <div class="demo1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                    <h3 class="progress-title">HTML5 - 60%</h3>
+                    <div class="progress red">
+                        <div class="progress-bar" style="width:60%; background:#ef5b5b;"></div>
+                    </div>
+
+                    <h3 class="progress-title">CSS3 - 90%</h3>
+                    <div class="progress yellow">
+                        <div class="progress-bar" style="width:90%; background:#ffc116;"></div>
+                    </div>
+
+                    <h3 class="progress-title">J-Query - 50%</h3>
+                    <div class="progress blue">
+                        <div class="progress-bar" style="width:50%; background:#20a39e;"></div>
+                    </div>
+
+                    <h3 class="progress-title">Bootstrap - 80%</h3>
+                    <div class="progress green">
+                        <div class="progress-bar" style="width:80%; background:#7cb518;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+    $(function(){
+        $('#dowebok').fullpage({
+            controlArrowColor:["#585859"],
+            sectionsColor:["","#55B1BE","#e5e5e5","pink"],
+            anchors:["p1","p2","p3","p4"],
+            navigation:["true"],
+            navigationColor:["blue"],
+            slidesNavigation:["true"],
+            loopHorizontal:["true"],
+            afterLoad:function (onchor,index) {
+                if(index===2){
+                    $(".wuziqi-biaoti li:nth-child(1)").css({
+                        position: "absolute",
+                        left: "0",
+                        top: "0",
+                    })
+                    $(".wuziqi-biaoti li:nth-child(2)").css({
+                        position: "absolute",
+                        left: "60px",
+                        top: "0",
+                    })
+                    $(".wuziqi-biaoti li:nth-child(3)").css({
+                        position: "absolute",
+                        left: "120px",
+                        top: "0",
+                    })
+                    $(".wuziqi-biaoti li:nth-child(4)").css({
+                        position: "absolute",
+                        left: "180px",
+                        top: "0",
+                    })
+                    $(".wuziqi-biaoti li:nth-child(5)").css({
+                        position: "absolute",
+                        left: "240px",
+                        top: "0",
+                    })
+                }
+                if(index===4){
+                    $(".progress-bar").css({boxShadow: "none",
+                        borderRadius: "0",
+                        position: "relative",
+                        animation: "animate-positive 2s",
+                    })
+                }
+            },
+            onLeave:function (index) {
+                setTimeout(function () {
+                    if(index===1) {
+                        $(".zhezhao").css({backgroundColor: "rgba(0, 0, 0, 0)"})
+                        $(".yi:hover ul:nth-child(1)").css({
+                            right: "-300px",
+                        })
+                        $(".yi:hover ul:nth-child(2)").css({
+                            left: "-300px",
+                        })
+                        $(".wenzi-1 ul:nth-child(3)").css({
+                            color:"#000"
+                        })
+                    }
+                    if(index===2){
+                    $(".wuziqi-biaoti li:nth-child(1)").css({
+                            left:"-1000px"
+                        })
+                        $(".wuziqi-biaoti li:nth-child(2)").css({
+                            left:"3000px"
+                        })
+                        $(".wuziqi-biaoti li:nth-child(3)").css({
+                            left:"3000px",
+                            top:"1000px"
+                        })
+                        $(".wuziqi-biaoti li:nth-child(4)").css({
+                            left:"-3000px",
+                            top:"1000px",
+                        })
+                        $(".wuziqi-biaoti li:nth-child(5)").css({
+                            left:"3000px",
+                            top:"3000px"
+                        })
+                    }
+                    if(index===4){
+                        $(".progress-bar").css({
+                            position: "absulote",
+                            animation: "none",
+
+                        })
+                    }
+
+                })
+            }
+        });
+        $("#fp-nav ul li a span").eq(0).append("个人简介")
+        $("#fp-nav ul li a span").eq(1).append("个人作品")
+        $("#fp-nav ul li a span").eq(2).append("职业技能")
+        $("#fp-nav ul li a span").eq(3).append("联系方式")
+    });
+
+</script>
+<script>
+    $(document).ready(function () {
+        var stars = 800;
+        var $stars = $('.stars');
+        var r = 800;
+        for (var i = 0; i < stars; i++) {
+            if (window.CP.shouldStopExecution(1)) {
+                break;
+            }
+            var $star = $('<div/>').addClass('star');
+            $stars.append($star);
+        }
+        window.CP.exitedLoop(1);
+        $('.star').each(function () {
+            var cur = $(this);
+            var s = 0.2 + Math.random() * 1;
+            var curR = r + Math.random() * 300;
+            cur.css({
+                transformOrigin: '0 0 ' + curR + 'px',
+                transform: ' translate3d(0,0,-' + curR + 'px) rotateY(' + Math.random() * 360 + 'deg) rotateX(' + Math.random() * -50 + 'deg) scale(' + s + ',' + s + ')'
+            });
+        });
+    });
+
+</script>
+<script src="js/index.js"></script>
+<script>
+    (function(){
+        $('#wrap li').mouseover(function(){
+            if(!$(this).hasClass('curr')){
+                $('#wrap li').removeClass('curr');
+                $(this).addClass('curr');
+
+                // 切换背景
+                $('#wrap li').each(function(index){
+                    if($(this).hasClass('curr')){
+                        $('.bg').fadeOut(300);
+                        $('.bg:eq(' + index + ')').fadeIn(500);
+                    }
+                });
+
+                $('.curr').stop().animate({
+                    width: 700
+                }, 500, 'linear');
+                $('#wrap li').not('.curr').stop().animate({
+                    width: 100
+                }, 500, 'linear');
+            }
+        });
+    })()
+</script>
+</html>

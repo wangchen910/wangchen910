@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 1200px;
+            height: 680px;
+            /*background-color: #d767ff;*/
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 30px;
+            color: #06020a;
+        }
+
+        .scene {
+            width: 1000px;
+            height: 680px;
+            background-color: #00fff7;
+            position: absolute;
+            font-size: 40px;
+            background: url(img/bg.png) no-repeat center;
+            z-index: 2;
+            left:-20px;
+        }
+
+        .control {
+            width: 200px;
+            height: 380px;
+            /*background-color: rgba(234, 52, 39, 0.2);*/
+            position: absolute;
+            right:0;
+        }
+
+        .letter {
+            width: 150px;
+            height: 150px;
+            line-height: 50px;
+            position: absolute;
+        }
+        .start{
+            width: 50px;
+            height: 50px;
+            background: url(img/continue.png) no-repeat center;
+            border-radius: 20px;
+            float: left;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 40px;
+        }
+        .pause{
+            width: 50px;
+            height: 50px;
+            background: url(img/stop.png) no-repeat center;
+            border-radius: 20px;
+            float: left;
+            margin-left: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+        }
+        .over{
+             width: 50px;
+             height: 50px;
+             background: url(img/quit.png) no-repeat center;
+             border-radius: 50%;
+             float: left;
+             margin-left: 20px;
+            cursor: pointer;
+         }
+        .dfz{
+            width: 200px;
+            text-align: center;
+            font-size: 30px;
+            float: left;
+            background-color: cyan;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .life{
+            font-size: 20px;
+            width: 200px;
+            height: 65px;
+            line-height: 65px;
+            /*background: url(img/life.png) no-repeat center;*/
+            float: left;
+            position: relative;
+            text-align: center;
+            /*z-index: 3;*/
+            background-color: #f5fff5;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .state{
+            font-size: 20px;
+            width: 200px;
+            height: 65px;
+            line-height: 65px;
+            /*background: url(img/life.png) no-repeat center;*/
+            float: left;
+            position: relative;
+            text-align: center;
+            background-color: #f5fff5;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .scor{
+            text-align: center;
+            font-size: 20px;
+            width: 200px;
+            height: 65px;
+            line-height: 65px;
+            /*background: url(img/life.png) no-repeat center;*/
+            float: left;
+            position: relative;
+            background-color: #f5fff5;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        /*.lifeinner{*/
+            /*width: 165px;*/
+            /*height: 40px;*/
+            /*background: #a8753f;*/
+            /*position: absolute;*/
+            /*right: 10px;*/
+            /*top: 16px;*/
+            /*z-index: -1;*/
+            /*border-radius: 5px;*/
+            /*box-shadow: 0 0 10px #000 inset;*/
+            /*background-image: url(img/progress.png);*/
+            /*background-repeat: no-repeat;*/
+            /*background-size: 100% 100%;*/
+            /*transition: all 1s;*/
+        /*}*/
+        @keyframes rotate{
+            0%{
+                transform:rotate(0deg);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+        .music{
+            width:50px;height:50px;
+            border-radius: 50%;
+            background:url(img/music.png) no-repeat center;
+            position: absolute;
+            right:250px;top:10px;
+            z-index:9999;
+            background-color:#FEC743;
+            border:3px solid #fff;
+            animation:rotate 3s linear infinite;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="scene"></div>
+    <div class="control">
+        <div class="dfz">得分</div>
+        <div class="scor">0</div>
+        <div class="dfz">关卡</div>
+        <div class="state">1</div>
+        <div class="dfz">生命</div>
+        <div class="life">
+            5
+        </div>
+        <div class="start"></div>
+        <div class="pause"></div>
+        <div class="over"></div>
+    </div>
+    <div class="music"></div>
+</div>
+</body>
+<script>
+    // 面向对象编程
+    class Game {
+        constructor() {
+            this.lifeinner=document.querySelector(".lifeinner");
+            this.scene=document.querySelector(".scene");
+            this.scorEle=document.querySelector(".scor");
+            this.scor=0;
+            this.stateEle=document.querySelector(".state");
+            this.state=1;
+            this.lifeEle=document.querySelector(".life");
+            this.life=5;
+            this.num=3;
+            this.obj={};
+            this.speed=5;
+            this.h=window.innerHeight;
+            this.t=0;
+        }
+
+        start() {
+            for (let i=0; i < this.num; i++) {
+                this._createLetter();
+            }
+            this._move();
+            this._keydown();
+        }
+
+        //创建字母
+        _createLetter() {
+            let newdiv=document.createElement("div");
+            newdiv.className="letter";
+            do {
+                var randomNum=Math.floor(Math.random() * 26 + 65);
+                var randomLetter=String.fromCharCode(randomNum)
+            } while (this.obj[randomLetter])
+//            newdiv.innerHTML=randomLetter;
+            newdiv.style.background="url(img/"+randomLetter+".png) no-repeat center"
+            do {
+                var randomLeft=Math.floor(Math.random() * 900);
+            } while (this._checkleft(randomLeft))
+            let randomTop=-Math.floor(Math.random() * 100);
+            newdiv.style.left=randomLeft + "px";
+            newdiv.style.top=randomTop + "px";
+            this.scene.appendChild(newdiv);
+            this.obj[randomLetter]={left: randomLeft, top: randomTop, ele: newdiv}
+        }
+
+        _checkleft(newleft) {
+            for (let i in this.obj) {
+                if (newleft > this.obj[i].left - 100 && newleft < this.obj[i].left + 100) {
+                    return true;
+                }
+            }
+        }
+
+        _move() {
+            this.t=setInterval(function () {
+                for (let i in this.obj) {
+                    let top=this.obj[i].top;
+                    top+=this.speed;
+                    this.obj[i].ele.style.top=top + "px";
+                    this.obj[i].top=top;
+                    if(this.obj[i].top>this.h){
+                        this.life--;
+                        this.lifeEle.innerHTML=this.life;
+                        this.scene.removeChild(this.obj[i].ele);
+                        delete this.obj[i];
+                        this._createLetter();
+                        if(this.life===0){
+                            if(confirm("游戏结束，得分为"+this.scor+" 是否继续")){
+                               history.go(0);
+                            }
+                        }
+                    }
+                }
+            }.bind(this), 50)
+        }
+
+        _keydown() {
+            document.onkeydown=function (e) {
+                let kc=e.keyCode;
+                let letter=String.fromCharCode(kc);
+                if (this.obj[letter]) {
+                    this.scene.removeChild(this.obj[letter].ele);
+                    delete this.obj[letter];
+                    this._createLetter();
+                    this.scor++;
+                    this.scorEle.innerHTML=this.scor;
+                    if (this.scor % 10 === 0) {
+                        this._nextState();
+                    }
+                }
+            }.bind(this);
+        }
+
+        _nextState() {
+            this.state++;
+            this.stateEle.innerHTML=this.state;
+            if(this.state<=3) {
+                this._createLetter();
+            }else{
+                this.speed+=2;
+            }
+        }
+        pause(){
+           clearInterval(this.t);
+        }
+        running(){
+            this._move();
+        }
+        gameover(){
+            this.scor=0;
+            this.scorEle.innerHTML=0;
+            this.state=1;
+            this.stateEle.innerHTML=1;
+            this.life=5;
+            this.lifeEle.innerHTML=5;
+            this.num=3;
+            this.obj={};
+            this.speed=5;
+            clearInterval(this.t);
+            this.scene.innerHTML="";
+        }
+    }
+    let game=new Game();
+    let startBtn=document.querySelector(".start");
+    let pauseBtn=document.querySelector(".pause");
+    startBtn.onclick=function(){
+        game.start();
+        startBtn.style.display="none";
+        pauseBtn.style.display="block";
+    };
+
+    let flag=true;
+    pauseBtn.onclick=function(){
+        if(flag) {
+            game.pause();
+            pauseBtn.style.background="url(img/continue.png) no-repeat center";
+        }else{
+            game.running();
+            pauseBtn.style.background="url(img/stop.png) no-repeat center";
+        }
+        flag=!flag;
+    };
+    let over=document.querySelector(".over");
+    over.onclick=function(){
+      game.gameover();
+        pauseBtn.style.display="none";
+        startBtn.style.display="block";
+    }
+    //    function Human(){
+    //        this.name="zhangsan"
+    //    }
+    //    Human.prototype.say=function(){
+    //        alert("说话")
+    //    }
+    //    new Human()
+    //    class Human{
+    //        constructor(){
+    //            this.name="zhangsan";
+    //        }
+    //        say(){
+    //            alert('说话')
+    //        }
+    //    }
+    //    new Human();
+</script>
+</html>

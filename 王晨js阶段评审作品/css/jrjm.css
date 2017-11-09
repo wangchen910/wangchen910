@@ -1,0 +1,20 @@
+.tm{
+    position: absolute;
+    left:300px;
+    top:-200px;
+    color: white;
+    font-size: 50px;
+    transition: 1s all;
+}
+canvas{
+    z-index: 999;
+}
+body:hover .tm{
+    top:200px;
+}
+.tm a:link {color: white}
+.tm a:visited {color: rgba(252, 248, 255, 0.62)
+}
+.tm a:hover {color: rgba(254, 255, 148, 0.78)
+}
+.tm a:active {color: #ffffff}

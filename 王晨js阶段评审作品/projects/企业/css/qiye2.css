@@ -1,0 +1,201 @@
+/*
+* @Author: 王晨
+* @Date:   2017-09-24 22:23:58
+* @Last Modified by:   王晨
+* @Last Modified time: 2017-09-24 23:04:56
+*/
+/* 导航开始 */
+
+#daohang{
+	width: 1200px;
+    height: 126px;
+    margin: 0 auto;
+}
+.logo{
+	float: left;
+    width: 192px;
+}
+.daohang-wenzi{
+	float: right;
+    width: 1002px;
+    margin: 46px -18px 0 0;
+    color: #000;
+    font-size: 12px;
+    line-height: 22px;
+}
+.daohang-wenzi li{
+	margin-left: 11px;
+	float: left;
+}
+.daohang-wenzi a{
+    line-height: 26px;
+    text-align: center;
+    font-size: 16px;
+    display: block;
+    height: 40px;
+    color: #333;
+    width: 100px;
+    float: left;
+}
+.daohang-wenzi a:hover{
+    color: #c60108;
+    border-bottom: 1px #c60108 solid;
+}
+/* 导航结束 */
+
+/* banner开始 */
+.banner{
+	position: relative;
+}
+.lunbodian{
+	position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    text-align: center;
+    z-index: 100;
+}
+.lunbodian li{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #fff;
+	margin: 0 auto;
+	display: inline-block;
+	margin: 0 5px;
+}
+/* banner开始 */
+
+/* 内容开始 */
+.ppzs{
+	min-width: 1200px;
+    padding-top: 30px;
+    margin-bottom: 40px;
+}
+.wenzi-top{
+    width: 1200px;
+    height: 74px;
+    margin: 0 auto;
+    border-bottom: solid 1px #ccc;
+}
+.wenzi-p{
+    float: left;
+    height: 74px;
+    line-height: 50px;
+    background: url(../images/product_tline.jpg) no-repeat 2px bottom;
+    color: #404040;
+    font-size: 34px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.wenzi-y{
+	float: right;
+    color: #333;
+    font-size: 15px;
+    margin-top: 16px;
+    line-height: 24px;
+}
+.wenzi-y img{
+	width: 22px;
+	height: 20px;
+	float: left;
+    margin-right: 15px;
+}
+.wenzi-y a{
+	color: #333;
+}
+.wzsy{
+	color: #727272;
+}
+.wzsy-1{
+		color: #c7000a;
+}
+.wenzi-bottom{
+	width: 1200px;
+    margin: 0 auto 40px;
+}
+.ppsy-wz{
+	width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#wz-bj{
+	width: auto;
+    min-height: 360px;
+    padding: 15px;
+    padding-right: 0px;
+    color: #000;
+    text-align: justify;
+}
+#wz{
+	margin-bottom: 15px;
+}
+/* 内容结束 */
+
+/* 最底部开始 */
+.zuidibu{
+    min-width: 1200px;
+    background: #2e2d29;
+    padding: 70px 0 42px 0;
+    overflow: hidden;
+}
+.zuidibu-bj{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.dibu-zuo{
+    float: left;
+    width: 730px;
+    padding-left: 90px;
+}
+.dibu-you{
+    float: right;
+    width: 304px;
+    padding-right: 10px;
+}
+.dibu-zuo dl{
+    float: left;
+    width: 198px;
+}
+.dibu-zuo dt{
+    line-height: 34px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 18px;
+}
+.dibu-zuo dd{
+    line-height: 26px;
+    font-size: 15px;
+    color: #737373;
+}
+.dibu-zuo a{
+    color: #737373;
+}
+.zixun-dianhua{
+    width: 220px;
+}
+.zixun-dianhua dt{
+    line-height: 34px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 18px;
+}
+.zixun-dianhua dd{
+    line-height: 26px;
+    font-size: 15px;
+    color: #737373;
+}
+.zixun-dianhua img{
+    margin-bottom: 4px;
+}
+.banquan{
+    min-width: 1200px;
+    text-align: center;
+    background: #3c3c3a;
+    border-top: solid 1px #343330;
+    line-height: 48px;
+    color: #737373;
+    font-size: 14px;
+}
+/* 最底部结束 */
