@@ -9,7 +9,7 @@
     let dir = "r";
     let st = setInterval(fn, 4000);
     function fn() {
-        swboxs.style.transition = "all 1s";
+        swboxs.style.transition = "all 3s";
         if (dir == "r") {
             now++;
         } else if (dir === "l") {
